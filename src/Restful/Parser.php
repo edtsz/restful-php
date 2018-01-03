@@ -123,7 +123,7 @@ class Parser {
      */
     public function parse()
     {
-        if( $this->method === 'post' )
+        if( $this->method === 'post' && strpos( $this->ctype, 'form-' ) !== false )
         {
             $_REQUEST = array_merge( $_GET, $_POST );
             return true;
